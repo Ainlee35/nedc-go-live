@@ -480,17 +480,22 @@ document.querySelectorAll('.color-hover').forEach(el => {
     });*/
 
 document.addEventListener("scroll", function () {
-  const scrollPos = window.scrollY;
-  const logoTop = document.querySelector(".logo-top");
-  const logoScroll = document.querySelector(".logo-scroll");
+const navbar = document.querySelector(".navbar");
+const logoTop = document.querySelector(".logo-top");
+const logoScroll = document.querySelector(".logo-scroll");
 
-  if (scrollPos > 50) { // after scrolling
-    logoTop.classList.add("d-none");
-    logoScroll.classList.remove("d-none");
-  } else { // at top
-    logoTop.classList.remove("d-none");
-    logoScroll.classList.add("d-none");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+    logoTop.style.opacity = "0";
+    logoScroll.style.opacity = "1";
+  } else {
+    navbar.classList.remove("scrolled");
+    logoTop.style.opacity = "1";
+    logoScroll.style.opacity = "0";
   }
+});
+
 });
 
 
