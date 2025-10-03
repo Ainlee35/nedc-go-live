@@ -15,6 +15,34 @@
       width: 100%;
       z-index: 10;
     }
+    .navbar-brand {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.logo-top {
+  opacity: 1;
+}
+
+.logo-scroll {
+  opacity: 0;
+}
+
+.navbar.scrolled .logo-top {
+  opacity: 0;
+}
+
+.navbar.scrolled .logo-scroll {
+  opacity: 1;
+}
+
     .navbar.scrolled {
       position: fixed;
       background: #fff !important;
